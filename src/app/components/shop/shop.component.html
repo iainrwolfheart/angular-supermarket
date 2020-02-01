@@ -1,0 +1,12 @@
+<h2 style='text-align: center'>Shop</h2>
+
+<ul *ngFor='let item of itemsOnSale.itemsForSale'>
+    <li><a [routerLink]="['product-info', item.name]">{{ item.name }}</a> £{{ item.price }}
+        <button (click)='addToBasket(item)'>+</button>        
+    </li>
+</ul>
+
+<ul *ngFor='let item of basket'>
+    <li>{{ item.name }} <button (click)='deleteFromBasket(item)'>-</button></li>
+</ul>
+<p>Total: £{{ basketTotal }}</p>
